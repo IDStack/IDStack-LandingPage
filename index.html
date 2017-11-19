@@ -520,10 +520,10 @@
                         _self.closest('div').find('button[type="submit"]').removeAttr('disabled');
                         if (data.code == false) {
                             _self.closest('div').find('[name="' + data.field + '"]').css('border-bottom', 'solid 2px red');
-                            _self.find('button[type="submit"]').after('<div class="msg"><p style="color:red;padding:0;font-size:13px;font-weight:bold;position:absolute">*' + data.err + '</p></div>');
+                            _self.find('button[type="submit"]').after('<br/><div class="msg"><p style="color:red;padding:0;font-size:13px;font-weight:bold;position:absolute">*' + data.err + '</p></div><br/>');
                         } else {
                             $('.msg').html('<p style="color:green;padding:0;font-size:13px;font-weight:bold;position:absolute">' + data.success + '</p>');
-                            _self.find('button[type="submit"]').after('<div class="msg"><p style="color:green;padding:0;font-size:13px;font-weight:bold;position:absolute">' + data.success + '</p></div>');
+                            _self.find('button[type="submit"]').after('<br/><div class="msg"><p style="color:green;padding:0;font-size:13px;font-weight:bold;position:absolute">' + data.success + '</p></div><br/>');
                             _self.closest('div').find('input,textarea').val('');
                         }
                     }
