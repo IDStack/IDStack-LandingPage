@@ -79,7 +79,7 @@
 								</div>
 							</div>
 						</div>
-					</div>		
+					</div>
 					<div class="clearfix"></div>
 					<div class="mockup hidden-xs">
 						<img alt="" src="image/feature-mockup-iphone.png">
@@ -102,7 +102,7 @@
 								<img alt="" src="image/feature-mockup-iphone.png">
 							</div>
 						</div>
-					</div>		
+					</div>
 				</div>
 			</div>
 			<!-- Left and right controls -->
@@ -254,8 +254,8 @@
 							</div>
 						</div>
 					</div>
-				</div>				
-			</div>			
+				</div>
+			</div>
 		</div>
 	</section>
 	<!-- End Feature -->
@@ -336,7 +336,7 @@
 									<div class="member-name text-center">
 										<h4>Chanaka Lakmal</h4>
 										<p>CSE Undergraduate</p>
-									</div>							
+									</div>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-6">
@@ -358,7 +358,7 @@
 									<div class="member-name text-center">
 										<h4>Sachithra Dangalla</h4>
 										<p>CSE Undergraduate</p>
-									</div>							
+									</div>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-6">
@@ -380,7 +380,7 @@
 									<div class="member-name text-center">
 										<h4>Chandu Herath</h4>
 										<p>CSE Undergraduate</p>
-									</div>							
+									</div>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-6">
@@ -402,10 +402,10 @@
 									<div class="member-name text-center">
 										<h4>Chamin Wickramarathna</h4>
 										<p>CSE Undergraduate</p>
-									</div>							
+									</div>
 								</div>
 							</div>
-						</div>	
+						</div>
 					</div>
 				</div>
 			</div>
@@ -416,7 +416,7 @@
 	<!-- Map -->
 	<section class="map-holder">
 		<div id="gmap"></div>
-	</section> 
+	</section>
 	<!-- End map -->
 	<section id="contact" class="contact">
 			<div class="container">
@@ -468,8 +468,8 @@
 			<div class="row">
 				<div class="copyright">
 					2017 &copy; <strong>IDStack.one</strong>. All Rights Reserved.
-				</div>			
-			</div>			
+				</div>
+			</div>
 		</div>
 	</footer>
 	<!-- End Footer -->
@@ -489,14 +489,17 @@
 	<!-- End Modal video -->
 
 	<!-- Google Map Script -->
-	<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDNaa8LOQISEST6NIGC78vmdnIOynR2SeU"></script> 
-	<script src="js/gmaps.js"></script>	
-
+	<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDNaa8LOQISEST6NIGC78vmdnIOynR2SeU"></script>
+	<script src="js/gmaps.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/wow.js"></script>
 	<script src="js/script.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
+
+	<script type="text/javascript">
+        $('.custom-form').on('submit',function(e){e.preventDefault();var _self=$(this);var __selector=_self.closest('input,textarea');_self.closest('div').find('input,textarea').removeAttr('style');_self.find('.msg').remove();_self.closest('div').find('button[type="submit"]').attr('disabled','disabled');var data=$(this).serialize();$.ajax({url:'script/email.php',type:"post",dataType:'json',data:data,success:function(data){_self.closest('div').find('button[type="submit"]').removeAttr('disabled');if(data.code==false){_self.closest('div').find('[name="'+data.field+'"]').css('border-bottom','solid 2px red');_self.find('.customised-formgroup').last().after('<div class="msg"><p style="color:red;padding:0;font-size:13px;font-weight:bold;position:absolute">*'+data.err+'</p></div>');}else{$('.msg').html('<p style="color:green;padding:0;font-size:13px;font-weight:bold;position:absolute">'+data.success+'</p>');_self.find('.customised-formgroup').last().after('<div class="msg"><p style="color:green;padding:0;font-size:13px;font-weight:bold;position:absolute">'+data.success+'</p></div>');_self.closest('div').find('input,textarea').val('');}}});});$('.tab-content .tab-pane').click(function(){$(this).find('iframe').addClass('clicked');$(this).addClass("clicked");});$('.tab-content .tab-pane').mouseleave(function(){$(this).find('iframe').removeClass('clicked');$(this).removeClass("clicked");});});
+	</script>
 </body>
 </html>
