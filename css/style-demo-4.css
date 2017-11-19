@@ -872,7 +872,7 @@ section .section-heading{
 	transform: skewY(170deg);
 }
 .download:after{
-	background:url("../image/call-action-mockup.png") no-repeat scroll right bottom;
+	background:url("../image/ui/home.png") no-repeat scroll right bottom;
 	content: "";
 	height: 100%;
 	position: absolute;
