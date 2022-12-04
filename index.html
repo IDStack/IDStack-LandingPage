@@ -380,51 +380,26 @@
 	</section>
 	<!-- End Team -->
 
-	<!-- Map -->
-	<section class="map-holder">
-		<div id="gmap"></div>
-	</section>
-	<!-- End map -->
 	<section id="contact" class="contact">
 			<div class="container">
 				<div class="row">
 					<div class="contact-holder row">
-						<div class="col-md-6 res-margin">
-							<h3>Your Feedback is important to us !</h3>
-							<form class="custom-form" data-toggle="validator" role="form" method="post" action="script/email.php">
-								<div class="form-group">
-									<input type="text" class="form-control" name="name" placeholder="Name" data-error="Please enter your name" required>
-									<div class="help-block with-errors"></div>
-								</div>
-								<div class="form-group">
-									<input type="email" class="form-control" name="email" placeholder="Email" data-error="Please enter your email correctly" required>
-									<div class="help-block with-errors"></div>
-								</div>
-								<div class="form-group">
-									<textarea class="form-control" name="message" placeholder="Message" data-error="Please enter your message" required></textarea>
-									<div class="help-block with-errors"></div>
-								</div>
-								<button type="submit">SEND</button>
-							</form>
-						</div>
-						<div class="col-md-5 col-md-offset-1">
-							<h3>About us</h3>
-							<p>Our team was gathered as the final year project team in the Department of Computer Science and Engineering
-								at University of Moratuwa. We found the existing problem in our local domain in the document verification
-								process. The IDStack project was started on February 2017. We hope that it has the potential to
-							    revolutionize the document verification protocol in Sri Lanka.</p>
-							<ul class="contact-details">
-								<li><i class="fa fa-phone" aria-hidden="true"></i>
-								<span>+94 77 5962256</span>
-								</li>
-								<li><i class="fa fa-map-marker" aria-hidden="true"></i>
-								<span>Department of Computer Science and Engineering, University of Moratuwa, Sri Lanka</span>
-								</li>
-								<li><i class="fa fa-envelope" aria-hidden="true"></i>
-								<span>info@idstack.one</span>
-								</li>
-							</ul>
-						</div>
+						<h3>About us</h3>
+						<p>Our team was gathered as the final year project team in the Department of Computer Science and Engineering
+							at University of Moratuwa. We found the existing problem in our local domain in the document verification
+							process. The IDStack project was started on February 2017. We hope that it has the potential to
+							revolutionize the document verification protocol in Sri Lanka.</p>
+						<ul class="contact-details">
+							<li><i class="fa fa-phone" aria-hidden="true"></i>
+							<span>+94 77 5962256</span>
+							</li>
+							<li><i class="fa fa-map-marker" aria-hidden="true"></i>
+							<span>Department of Computer Science and Engineering, University of Moratuwa, Sri Lanka</span>
+							</li>
+							<li><i class="fa fa-envelope" aria-hidden="true"></i>
+							<span>ldclakmal@gmail.com</span>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -450,39 +425,5 @@
 	<script src="js/wow.js"></script>
 	<script src="js/script.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
-
-	<script type="text/javascript">
-        $(function() {
-            //strict mode enabled
-            "use strict";
-            /*Js for sending email and validation*/
-            $('.custom-form').on('submit', function(e) {
-                e.preventDefault();
-                var _self = $(this);
-                var __selector = _self.closest('input,textarea');
-                _self.closest('div').find('input,textarea').removeAttr('style');
-                _self.find('.msg').remove();
-                _self.closest('div').find('button[type="submit"]').attr('disabled', 'disabled');
-                var data = $(this).serialize();
-                $.ajax({
-                    url: 'script/email.php',
-                    type: "post",
-                    dataType: 'json',
-                    data: data,
-                    success: function(data) {
-                        _self.closest('div').find('button[type="submit"]').removeAttr('disabled');
-                        if (data.code == false) {
-                            _self.closest('div').find('[name="' + data.field + '"]').css('border-bottom', 'solid 2px red');
-                            _self.find('button[type="submit"]').after('<br/><div class="msg"><p style="color:red;padding:0;font-size:13px;font-weight:bold;position:absolute">*' + data.err + '</p></div><br/>');
-                        } else {
-                            $('.msg').html('<p style="color:green;padding:0;font-size:13px;font-weight:bold;position:absolute">' + data.success + '</p>');
-                            _self.find('button[type="submit"]').after('<br/><div class="msg"><p style="color:green;padding:0;font-size:13px;font-weight:bold;position:absolute">' + data.success + '</p></div><br/>');
-                            _self.closest('div').find('input,textarea').val('');
-                        }
-                    }
-                });
-            });
-        });
-	</script>
 </body>
 </html>
